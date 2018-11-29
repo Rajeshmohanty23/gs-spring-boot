@@ -5,9 +5,9 @@ node {
    stage('build') {
       sh '''
          mvn clean package -f complete/pom.xml
-         cd target
+         cd complete/target
          cp ../src/main/resources/web.config web.config
-         cp todo-app-java-on-azure-1.0-SNAPSHOT.jar app.jar 
+         cp gs-spring-boot-0.1.0.jar app.jar 
          zip todo.zip app.jar web.config
       '''
    }
